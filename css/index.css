@@ -1,0 +1,1506 @@
+/* 
+index.css
+- Reset *{
+- Body 
+- Header
+- Sections
+- media querys  
+*/
+
+ /* Import de la font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background: #0e1514;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0e1514;
+  color: white;
+  z-index: 1000;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+  /* margin: 8px 64px; */
+  max-width: 1200px;
+  width: 100%;
+  background-color: #0e1514;
+}
+
+.nav__logo {
+  max-height: 48px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin: 0 1em;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.nav__item--dropdown:hover .dropdown__menu {
+  display: block;
+  z-index: 21;
+}
+
+.dropdown__menu {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 14em;
+}
+/* Burger Menu - estilo */
+.open-menu,
+.close-menu {
+  display: none;
+  border: 0;
+  font-size: 0.75rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Media Query para ocultar o mostrar el Burger menu */
+@media screen and (max-width: 720px) {
+  .open-menu,
+  .close-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav__list {
+    opacity: 0;
+    visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: 100vh;
+    background-color: #0e1514;
+    z-index: 29;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  /* Se añade una clase Visible 
+    con propiedades que recuperen visbilidad */
+  .nav__list.visible {
+    opacity: 1;
+    visibility: visible;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__item {
+    flex-direction: column;
+  }
+}
+
+.dropdown__item {
+  margin: 0 auto;
+}
+
+.dropdown__link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+}
+
+.logo {
+  font-size: 2em;
+  pointer-events: none;
+  margin-right: 270px;
+}
+
+.nav__item a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5em 0.5em;
+  border-radius: 8px;
+  margin: 0.75em 0.75em;
+  font-weight: 400;
+}
+
+.dropdown__item a:hover,
+.navigation a.active {
+  background: #958624;
+  color: #fff;
+}
+
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0e1514;
+}
+
+.banner__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.text__display {
+  font-size: 4em;
+  color: #fff;
+  text-shadow: 4px 2px 4px rgba(32, 31, 31, 0.5);
+  z-index: 12;
+}
+
+.text__brief {
+  top: 15em;
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(32, 32, 32, 0.5);
+  z-index: 11;
+}
+
+.parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.sec {
+  position: relative;
+  background: #003329;
+  padding: 100px;
+}
+
+.sec h2 {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.sec p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.intro__title {
+  font-size: 3em;
+  margin-top: 0;
+  position: absolute;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.intro__text {
+  position: absolute;
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline {
+  position: relative;
+  padding-top: 5em;
+}
+
+.timeline__event {
+  padding: 2em 1em 1em 1em;
+  position: relative;
+  background-color: #0e1514;
+  border-bottom: 0px solid #ddd;
+  color: aliceblue;
+}
+
+/* Se le da orden al titulo de cada Munial + el icono de Back to top*/
+.timeline__event h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  gap: 1em;
+  background-color: #202225; /* color de barra con nombre del mundia*/
+}
+
+.event__title {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: #0e1514;
+  padding: 0.5em 0;
+  font-size: 2em;
+  text-align: center;
+  z-index: 9;
+  border-bottom: 1px solid #333;
+}
+
+/* Estilo y animacion minima para la funcionalidad Back to top */
+.back-to-top {
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 0.5em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.banner {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.banner__image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 1s ease;
+
+}
+
+.banner__image {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Solo cuando tienen la clase "in-view" se animan */
+.banner__image.in-view {
+  animation: riseUp 1.9s ease-out forwards;
+}
+
+.animate__players {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.animate__players.in-view {
+  animation: riseUp 4.7s ease-out forwards;
+}
+
+@keyframes riseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+}
+
+.banner_img_maradona,
+.banner_img_zidane {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.banner_img_messi,
+.banner_img_pele {
+  opacity: 0;
+  animation: fadeIn 0.75s forwards;
+}
+
+.banner_img_trophy {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.banner__image--1 {
+  left: 0;
+}
+
+.banner__image--2 {
+  right: 0;
+}
+
+.event__details {
+  margin-top: 2em;
+  animation: fadeIn 2s ease-in-out;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: transparent;
+  color: #888888; /* Frase bajo el banner del mundial */
+  font-style: italic;
+}
+
+
+/* Seccion de datos del torneo (Masonry Tiles e info de goles) */
+
+.tile__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 2em;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.tile {
+  background: #444;
+  color: #fff;
+  padding: 1.5em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tile--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tile:hover {
+  background-color: #1e2427;
+}
+
+.tile img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1em;
+  align-self: center;
+}
+
+.tile__logo img {
+  max-width: max-content;
+  height: auto;
+}
+
+.tile__logo {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile__small {
+  grid-column: span 1;
+  grid-row: span 1;
+  font-size: 1rem;
+}
+
+.tile__wide {
+  grid-column: span 2;
+  grid-row: span 1;
+  font-size: 1rem;
+}
+
+.tile__tall {
+  grid-column: span 1;
+  grid-row: span 3;
+  font-size: 1.2rem;
+}
+
+/* ESTILO A LAS TILES COMPARTIDAS: Attendance, Stadiums, Leader in assistance */
+.tile__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5em;
+}
+
+/* Titulo de las tiles */
+.tile__content__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* estilo de los valores contenidos en tile small */
+.tile__content__value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Estilo para Tile de FINAL MATCH RESULT */
+.tile__match-result__title {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tile__match-result__score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.tile__match-result__score img {
+  width: 1.5em;
+  height: auto;
+  margin-top: 20%;
+}
+
+.tile__match-result__penalty {
+  font-size: 0.9rem;
+  margin-top: 0.5em;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Detallamos el Estilo para el Tile largo con info del MVP: tile__tall */
+.tile__mvp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0; /* se intenta usar este valor para que la imagen se adhiera al fondo */
+  overflow: hidden;
+  position: relative;
+}
+
+.tile__mvp__text {
+  padding: 1em;
+}
+
+.tile__mvp__title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.tile__mvp__name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.tile__mvp__image img {
+  max-width: 216px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Estilo para alinear la imagen del futbolista MVP */
+.tile__mvp__image {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: auto;
+}
+/* continua la definicion de las demas tiles*/
+
+.tile__large {
+  grid-column: span 1;
+  grid-row: span 2;
+  font-size: 1rem;
+}
+
+.tile__large ul {
+  padding-left: 1.2em;
+  margin: 1em 0 0 0;
+}
+
+/* Estructura del RANKING tile */
+.tile__ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  position: relative;
+  border: 4px solid #ffd700; /* borde inicial */
+  border-radius: 0.75em;
+  animation: glowBorder 2.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 0px #ffd700; /* valor inicial sin brillos */
+}
+
+/* Glowing animation  */
+@keyframes glowBorder {
+  0% {
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+  }
+  100% {
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+  }
+}
+
+.tile__ranking__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.tile__ranking__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tile__ranking__link {
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: underline;
+  
+}
+
+.tile__ranking__item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.tile__ranking__item picture {
+  width: 2em;
+  flex-shrink: 0;
+}
+
+.tile__ranking__item img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.tile__ranking__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tile__ranking__info strong {
+  font-size: 1.1rem;
+}
+
+.tile__ranking__info span {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Modal */
+.modal {
+  display: none;
+}
+
+.modal--active {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+body.modal--open {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal__content {
+  position: relative;
+  background: #3a506b;
+  max-width: 720px;
+  box-sizing: border-box;
+  min-height: 576px;
+  margin: 5vh auto;
+  padding: 2em;
+  border-radius: 0.5em;
+  z-index: 1000;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.modal__header h2 {
+  background-color: transparent;
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Bracket styles */
+.modal__brackets {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50vh;
+  gap: 0em;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.bracket__round,
+.bracket__final {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+}
+
+.bracket__connectordesktop {
+  display: flex;
+  flex-direction: column;
+  gap: 0em;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+}
+
+.bracket__match {
+  background: #171a1a;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.bracket__match h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+}
+
+.bracket__match div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.1em;
+  font-size: 0.95rem;
+}
+
+.bracket__match img {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 1em;
+  margin-top: 0.5em;
+}
+
+.bracket__connectormobile {
+  display: none;
+}
+
+.team__name .shortName {
+  /* oculta la abreviatura del pais */
+  display: none;
+}
+
+/* - - - Breakpoints seccion datos del mundial - - -  */
+
+/* Desktop Medium: menos de 1440px */
+@media (max-width: 1439px) {
+  .tile__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tile__small {
+    grid-column: span 1;
+  }
+
+  .tile__wide {
+    grid-column: span 2;
+  }
+
+  .tile__large {
+    grid-column: span 1;
+  }
+
+  .tile__tall {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+}
+
+/* Tablet: menos de 890px */
+
+@media (max-width: 890px) {
+  .tile__ranking__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.75em;
+  }
+}
+/* Tablet: menos de 768px */
+@media (max-width: 767px) {
+  .tile__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tile__small,
+  .tile__tall {
+    grid-column: span 4;
+  }
+
+  .tile__wide,
+  .tile__large {
+    grid-column: span 4;
+  }
+
+  .tile img {
+    max-width: 100%;
+  }
+
+  .modal__content {
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+    margin: 1vh auto;
+  }
+
+  .modal__brackets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0em;
+  }
+
+  .bracket__final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    order: 2;
+  }
+
+  .bracket__round,
+  .bracket__final {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    width: auto;
+  }
+
+  .bracket__match div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.1em;
+    font-size: 0.75rem;
+  }
+
+  .bracket__match h4 {
+    font-size: 0.75rem;
+    margin-bottom: 0.5em;
+  }
+
+  .bracket__semis {
+    order: 1;
+  }
+
+  /* Reorder elements */
+  .semifinal__first {
+    order: 1;
+  }
+
+  .bracket__final {
+    order: 2;
+  }
+
+  .semifinal__second {
+    order: 3;
+  }
+
+  .bracket__connectordesktop {
+    display: none;
+  }
+
+  .team__name .complete {
+    /* se quita el nombre completo */
+    display: none;
+  }
+
+  .team__name .shortName {
+    /* muestra el nombre abreviado del pais */
+    display: inline;
+  }
+
+  .bracket__connectormobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0em;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    margin-bottom: 0%;
+    order: 2;
+  }
+}
+
+/* Mobile: menos de 428px */
+@media (max-width: 428px) {
+  .tile__container {
+    grid-template-columns: 1fr;
+  }
+
+  .tile {
+    grid-column: span 1;
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tile img {
+    max-width: 60%;
+  }
+
+  .tile__logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .tile__ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: flex-start;
+  }
+
+  .tile__ranking__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: flex-start;
+  }
+
+  .modal__content {
+    width: 92vw;
+    box-sizing: border-box;
+    margin: 1vh auto;
+  }
+
+  .modal__brackets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0em;
+  }
+
+  .bracket__final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    order: 2;
+  }
+
+  .bracket__round,
+  .bracket__final {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    width: auto;
+  }
+
+  .bracket__match div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.1em;
+    font-size: 0.75rem;
+    max-width: 160px;
+    min-width: 72px;
+  }
+
+  .bracket__match h4 {
+    font-size: 0.75rem;
+    margin-bottom: 0.5em;
+  }
+
+  .bracket__semis {
+    order: 1;
+  }
+
+  /* Reorder elements */
+  .semifinal__first {
+    order: 1;
+  }
+
+  .bracket__final {
+    order: 2;
+  }
+
+  .semifinal__second {
+    order: 3;
+  }
+
+  .bracket__connectordesktop {
+    display: none;
+  }
+
+  .team__name .complete {
+    /* se quita el nombre completo */
+    display: none;
+  }
+
+  .team__name .shortName {
+    /* muestra el nombre abreviado del pais */
+    display: inline;
+  }
+
+  .bracket__connectormobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0em;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+    order: 2;
+  }
+}
+
+/* Estilo de la seccion de estadisticas */
+
+.statistics {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.statistics {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #29413f;
+  padding: 4em 1em;
+  gap: 32px;
+}
+
+.statistics img {
+  width: 100%;
+  max-width: 248px;
+  background-color: transparent;
+
+  animation: ballSpin 3s infinite;
+}
+
+.goals__ball img {
+  width: 100%;
+  max-width: 248px;
+  background-color: transparent;
+
+  animation: ballSpin 3s infinite;
+}
+
+/* Estadisticas Refinadas */
+
+.goals__section {
+  background-color: #3e5670;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 1280px;
+  margin: 2em auto;
+}
+
+.goals__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ball Image */
+.goals__ball img {
+  max-width: 168px;
+  width: 100%;
+  height: auto;
+}
+
+.goals__ball {
+  display: flex;
+  justify-content: center;
+}
+
+/* Stat Tile Base */
+.goals__tile {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0.75em;
+  padding: 1em 1.5em;
+  min-width: 160px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.goals__tile:hover {
+  background-color: #172b38;
+  color: #000;
+}
+
+.goals__tile__label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+
+.goals__tile__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.yellow {
+  color: #f2c94c;
+}
+
+/* === Top Scorer Hover efecto === */
+.goals__tile--scorer {
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.scorer__default,
+.scorer__hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  height: 100%;
+}
+
+.scorer__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75em;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.goals__tile--scorer:hover .scorer__hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.goals__tile--scorer:hover .scorer__default {
+  opacity: 0;
+}
+
+.scorer__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #223254;
+  margin-bottom: 0.5em;
+}
+
+.scorer__hover img {
+  width: 104px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* === Responsive === */
+
+/* Tablet: menos de 768px */
+@media (max-width: 767px) {
+  .goals__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .goals__tile,
+  .goals__ball {
+    flex: 1 1 100%;
+    max-width: calc(100% - 32px);
+  }
+}
+
+/* Mobile: menos de 428px */
+@media (max-width: 428px) {
+  .goals__wrapper {
+    flex-direction: column;
+    gap: 1em;
+    padding: 0;
+  }
+
+  .goals__tile,
+  .goals__ball {
+    max-width: calc(100% - 32px); /* para dejar 16px de espacio en ambos lados */
+    width: 100%;
+  }
+}
+
+/* Keyframe de animacion del balón y Seccion Statistics */
+@keyframes ballSpin {
+  15% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(110deg);
+  }
+  60% {
+    transform: rotate(35deg);
+  }
+  80% {
+    transform: rotate(30deg);
+  }
+  85% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(15deg);
+  }
+  95% {
+    transform: rotate(0deg);
+  }
+}
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  margin: 8px;
+  background-color: transparent;
+}
+
+.statistic h4 {
+  color: #ddc421;
+}
+
+.animated {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  width: 100%;
+}
+
+.animated.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .statistic {
+    flex: 1 1 100%;
+  }
+
+  .statistics img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .statistic {
+    flex: 1 1 100%;
+  }
+
+  .statistics img {
+    width: 180px;
+  }
+
+  .statistics {
+    flex-direction: column;
+  }
+
+  .statistic {
+    flex: 1 1 100%;
+  }
+
+  .statistics img {
+    width: 124px;
+  }
+}
+
+/* media querys */
+
+@media (max-width: 1366px) {
+  .parallax {
+    height: 80vh;
+  }
+
+  .masonry-item.wide {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .masonry-item.logo {
+    grid-column: span 1;
+    grid-row: 1;
+  }
+
+  .statistic {
+    flex: 1 1 100%;
+  }
+
+  .statistics img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .parallax {
+    height: 60vh;
+  }
+
+  .masonry-item.wide {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .masonry-item.logo {
+    grid-column: span 1;
+    grid-row: 1;
+  }
+
+  .statistic {
+    flex: 1 1 100%;
+  }
+
+  .statistics img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 920px) {
+  .parallax {
+    height: 50vh;
+  }
+
+  .masonry-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .masonry-item.wide {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .masonry-item.logo {
+    grid-column: span 1;
+    grid-row: 1;
+  }
+
+  .statistic {
+    flex: 1 1 100%;
+  }
+
+  .statistics img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 786px) {
+  .parallax {
+    height: 40vh;
+  }
+
+  .text__display {
+    font-size: 2.5em;
+  }
+
+  .text__brief {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .dropdown__menu {
+    background-color: #0e1514;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax {
+    height: 45vh;
+  }
+
+  .text__display {
+    font-size: 2em;
+  }
+
+  .text__brief {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .banner__text {
+    max-width: 300px;
+    width: 100%;
+    justify-content: center;
+    row-gap: 8px;
+    padding-top: 188px;
+  }
+
+  .dropdown__menu {
+    background-color: #0e1514;
+  }
+}
+
+/* Footer con logo e info */
+
+.footer {
+  background-color: #0e1514;
+  color: #ffffff;
+  width: 100%;
+  height: 119px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+}
+
+.footer__container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__logo img {
+  max-height: 48px;
+}
+
+.footer__text,
+.footer__presentation {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer__presentation a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    padding: 2em 1em;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    text-align: center;
+  }
+
+  .footer__logo img {
+    max-height: 60px;
+  }
+}

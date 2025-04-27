@@ -1,0 +1,1386 @@
+<!-- 
+ Encabezado
+ Nav Bar (Logo y menu con links a navegacion)
+ Banner Inicio con titulo
+ Secciones de contenido de cada Torneo
+ Footer  
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup History</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/index.js"></script>
+</head>
+
+<body>
+  <header class="header__container">
+<!-- Encabezado -->
+    <nav class="header__nav">
+<!-- El nav inicia con un logo en .svg encapsulado en la etiqueta picture.
+       Seguido del Menu principal y boton Burger Menu para resoluciones menores.
+      -->
+      <picture>
+        <source media="" srcset="media/fwc-h-logo_darkm.svg">
+        <img class="nav__logo" src="media/fwc-h-logo_darkm.svg" alt="worldcuphistory-logo">
+      </picture>
+      
+<!-- Las IDs para los botones openMenu y CloseMenu nos serviran para las funcionalidades en javascript -->
+      <button class="open-menu" id="openMenu">
+        <img src="media/burger-menu-icon.svg" alt="menu-burger">
+      </button>
+        <ul class="nav__list" id="nav">
+          <li>
+            <button class="close-menu" id="closeMenu"><img src="media/close-menu-icon.svg" alt="close-burger"></button>
+          </li>
+          <!-- El menu contiene los items "Home y World cup year" donde se podrá 
+           seleccionar el año al que queremos navegar.
+           -->
+          <li class="nav__item">
+            <a href="#home" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item nav__item--dropdown">
+            <a href="#years" class="nav__link">World Cup Year</a>
+            <!-- dentro de world cup year hay dropdown con ul y li para listar los enlaces a cada año.-->
+            <ul class="dropdown__menu">
+              <li class="dropdown__item"><a href="#worldcup-2022" class="dropdown__link" id="dropLink22">2022</a></li>
+              <li class="dropdown__item"><a href="#worldcup-2018" class="dropdown__link" id="dropLink18">2018</a></li>
+              <li class="dropdown__item"><a href="#worldcup-2014" class="dropdown__link" id="dropLink14">2014</a></li>
+              <li class="dropdown__item"><a href="#worldcup-2010" class="dropdown__link" id="dropLink10">2010</a></li>
+              <!-- Aquí se podrán añadir mas años de mundiales si quisieramos reflejar toda la historia. 
+               Con este proyecto se refleja la modularidad para exponer cada torneo y, con el tiempo necesario,
+               segun se describe en las memorias se podrian añadir muchos más datos. -->
+            </ul>
+          </li>
+
+        </ul>
+    </nav>
+</header>
+<!-- seccion del Home banner basado en efecto parallax -->
+<section class="parallax">
+<!-- Textos del Banner -->
+  <div class="banner__text" id="text">
+
+    <h2 class="text__display">World Cup History</h2>
+    <span class="text__brief">An overview of the greatest football event in history.</span>
+
+  </div>
+<!-- Imagenes de futbolistas fondos y elementos decorativos del banner -->
+<picture class="banner_stadium_bg">
+  <source media="" srcset="media/proyectos/stadium-bg.png">
+  <img src="media/proyectos/stadium-bg.png" id="stadium-homebanner" alt="fondo_estadio_home">
+</picture>
+<picture class="banner_img_maradona">
+  <source media="" srcset="media/proyectos/diego-banner.png">
+  <img src="media/proyectos/diego-banner.png" id="diego" alt="maradona_home_desktop">
+</picture>
+<picture class="banner_img_glasspattern">
+  <source media="" srcset="media/proyectos/pattern-crystalbanner.png">
+  <img src="media/proyectos/pattern-crystalbanner.png" id="pattern-crystal" alt="pattern_glassmorph_home">
+</picture>
+<picture class="banner_img_zidane">
+  <source media="" srcset="media/proyectos/zidane-banner.png">
+  <img src="media/proyectos/zidane-banner.png" id="zidane" alt="zidane_home">
+</picture>
+<picture class="banner_img_messi">
+  <source media="" srcset="media/proyectos/leo_messi_banner.png">
+  <img src="media/proyectos/leo_messi_banner.png" id="messi-home" alt="messi_home">
+</picture>
+<picture class="banner_img_trophy">
+  <source media="" srcset="media/proyectos/cup-banner-trophy.png">
+  <img src="media/proyectos/cup-banner-trophy.png" id="trofeo-home" alt="copa_mundo_home_desktop">
+</picture>
+<picture class="banner_img_pele">
+  <source media="" srcset="media/proyectos/Pele-banner-left_bottom.png">
+  <img src="media/proyectos/Pele-banner-left_bottom.png" id="pele-home" alt="pele_home">
+</picture>
+<picture class="banner_img_crowd">
+  <source media="" srcset="media/proyectos/crowd-fristlayer.png">
+  <img src="media/proyectos/crowd-fristlayer.png" id="aficion" alt="aficion_home">
+</picture>
+<!-- termina el contenido del banner -->
+</section>
+
+<!-- Contenido de Mundiales por año
+  en orden cronologico (reciente a mas antiguo) 
+  -->
+<div class="timeline">
+<!-- Seccion de Titulo sticky de cada mundial 
+ el id funciona para identificar cada seccion de 
+ un torneo especifico 
+ -->
+  <section id="worldcup-2022" class="timeline__event">
+    <!-- Titulo de cada mundial --> 
+    <h2 class="event__title">
+      Qatar 2022
+      <!-- Boton "BACK TO TOP" que acompaña al titulo
+       y tiene como funcionaliodad devolver la navegacion 
+       al punto de inicio -->
+      <button class="back-to-top" title="Back to Top">
+        <picture>
+          <source srcset="media/chevrons-up-backtotop.svg" type="image/svg">
+          <img src="media/chevrons-up-backtotop.svg" alt="Back to top button">
+        </picture>
+      </button>
+    </h2>
+    <!-- Empieza un banner animado
+     con fotografias que introducen momentos claves del torneo -->
+    <div class="event__banner banner">
+      <picture>
+        <img src="media/qatar-stadium-banner.png" alt="World Cup 2022" class="banner__image animate">
+      </picture>
+      
+      <picture>
+        <img src="media/players-qatar-twtwo.png" alt="World Cup 2022" class="banner__image animate__players">
+      </picture>
+    </div>
+    <!-- Pie de foto que describe o acompaña el banner fotografico del mundial -->
+    <div class="event__details">
+      <span>Definitely, the peak moment of Leo Messi's entire career.</span>
+    </div>
+<!-- Aquí empieza la seccion "masonry" y estadisticas del torneo. se llamarán "Tiles/cards": 
+ llamamos tiles ("recuadro modular") a cada contenedor cuadrado que usaremos en el proyecto 
+ a modo de mosaico en grupos que contienen datos claves y contenido dinamico como imagenes o 
+ hovers con mas info -->
+<section class="tile__container">
+  <div class="tile tile__small tile__logo">
+    <picture>
+      <source srcset="media/tournament/logo_worldcup_qatar-twtwo.png" type="image/png">
+      <img src="media/tournament/logo_worldcup_qatar-twtwo.png" alt="qatar22logo">
+    </picture>
+  </div>
+
+<!-- Tile con descripcion resumen de la copa -->
+  <div class="tile tile__wide">
+    <p>Qatar 2022 was the first World Cup held in the Middle East and during winter to avoid extreme heat. With cutting-edge stadiums, all located within a 50km radius, and advanced cooling technologies, it featured thrilling matches and dramatic comebacks, culminating in Lionel Messi's emotional farewell with Argentina's victory.</p>
+  </div>
+
+<!-- Tile con resultado de la Final -->
+  <div class="tile tile__small tile__match-result">
+    <h3 class="tile__match-result__title">FINAL MATCH RESULT</h3>
+    <div class="tile__match-result__score">
+      <picture>
+        <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+        <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+      </picture>
+      <span>3 - 3</span>
+      <picture>
+        <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+        <img src="media/tournament/argentina-ball-flag.png" alt="Argentina Flag">
+      </picture>
+    </div>
+    <!-- contenido de informacion extra del partido (tiempo extra o penales) -->
+    <div class="tile__match-result__penalty">(4 - 3) Penalty</div>
+  </div>
+
+<!-- Tile Con total de asistentes al mundial -->
+  <div class="tile tile__small tile__content">
+    <div class="tile__content__title">ATTENDANCE</div>
+    <div class="tile__content__value">3,404,252</div>
+  </div>
+
+<!-- Tile con el Mejor jugador del torneo -->
+  <div class="tile tile__tall tile__mvp">
+    <div class="tile__mvp__text">
+      <h3 class="tile__mvp__title">Best Player of the Tournament</h3>
+      <p class="tile__mvp__name">Lionel Messi</p>
+    </div>
+    <picture class="tile__mvp__image">
+      <source srcset="media/mvp_messi-qatar-bg.png" type="image/webp">
+      <source srcset="media/mvp_messi-qatar-bg.png" type="image/png">
+      <img src="media/mvp_messi-qatar-bg.png" alt="Lionel Messi">
+    </picture>
+  </div>
+
+<!-- Tile Cantidad de estadios habilitados -->
+  <div class="tile tile__small tile__content">
+    <div class="tile__content__title">NUMBER OF STADIUMS</div>
+    <div class="tile__content__value">8</div>
+  </div>
+
+<!-- Tile con ranking de posiciones y PopUp de detalles -->
+  <div class="tile tile__large tile__ranking">
+    <div class="tile__ranking__header">
+      <h3 class="tile__ranking__title">RANKING:</h3>
+      <!-- Enlace View More: abre el pop up con finales del torneo -->
+      <a href="#" class="tile__ranking__link" data-modal-target="#modal-1">View more ></a>
+    </div>
+<!-- Lista o ranking de los 4 mejores del torneo compuesta por:
+ Bandera circular + posicion + Nombre del pais y titulo de la posición -->
+    <div class="tile__ranking__item">
+      <picture>
+        <source srcset="media/tournament/argentina-ball-flag.png" type="image/webp">
+        <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+        <img src="media/tournament/argentina-ball-flag.png" alt="Argentina Flag">
+      </picture>
+      <div class="tile__ranking__info">
+        <strong>1. Argentina</strong>
+        <span>Champions</span>
+      </div>
+    </div>
+
+    <div class="tile__ranking__item">
+      <picture>
+        <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+        <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+      </picture>
+      <div class="tile__ranking__info">
+        <strong>2. Francia</strong>
+        <span>Runner-up</span>
+      </div>
+    </div>
+
+    <div class="tile__ranking__item">
+      <picture>
+        <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+        <img src="media/tournament/croatia-ball-flag.png" alt="Croatia Flag">
+      </picture>
+      <div class="tile__ranking__info">
+        <strong>3. Croacia</strong>
+        <span>Third Place</span>
+      </div>
+    </div>
+
+    <div class="tile__ranking__item">
+      <picture>
+        <source srcset="media/tournament/morocco-ball-flag.png" type="image/webp">
+        <img src="media/tournament/morocco-ball-flag.png" alt="Morocco Flag">
+      </picture>
+      <div class="tile__ranking__info">
+        <strong>4. Marruecos</strong>
+        <span>Fourth Place</span>
+      </div>
+    </div>
+  </div>
+
+<!-- Tile con Lider de asistencias -->
+  <div class="tile tile__small tile__content">
+    <div class="tile__content__title">LEADER IN ASSISTS</div>
+    <div class="tile__content__value">Bruno Fernandes (3)</div>
+  </div>
+</section>
+
+<!-- Modal PopUp - Contenido con Resultados de las finales 2022 -->
+<div class="modal" id="modal-1">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <div class="modal__header">
+      <h2>Final Results</h2>
+      <button class="modal__close" data-close-button>&times;</button>
+    </div>
+    <div class="modal__brackets">
+      <!-- seccion que contiene ambas semifinales -->
+      <div class="bracket__round bracket__semis">
+        <!-- contiene un solo partido de semifinales -->
+        <div class="bracket__match semifinal__first">
+          <h4>Semifinal - DEC 12, 2022</h4>
+          <div>
+            <!-- Nombre del equipo: imagen bandera + Nombre -->
+            <div class="bracket__countryName"> 
+            <picture>
+            <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+            <img src="media/tournament/argentina-ball-flag.png" alt="Argentina flag">
+            </picture>
+            <div class="team__name">
+              <span class="complete">Argentina*</span>
+              <!-- Clase para el Texto con version corta del nombre en el marcador para mobile -->
+              <span class="shortName">ARG</span> 
+            </div>
+            </div>
+            <!-- goles del primer equipo -->
+            <span>3</span>
+          </div>
+          <div>
+            <!-- Nombre del equipo: imagen bandera + Nombre -->
+            <div class="bracket__countryName">
+            <picture>
+            <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+            <img src="media/tournament/croatia-ball-flag.png" alt="Cratia Flag">
+            </picture>
+            <div class="team__name">
+              <span class="complete">Croacia</span>
+              <span class="shortName">CRO</span>
+            </div>
+            </div>
+            <!-- goles del segundo equipo -->
+            <span>0</span>
+          </div>
+        </div>
+        <!-- Contiene un solo partido de semifinales (segundo partido)
+         y misma estructura que la seccion anterior -->
+        <div class="bracket__match semifinal__second">
+          <h4>Semifinal - DEC 13, 2022</h4>
+          <div>
+            <div class="bracket__countryName">
+            <picture>
+            <source srcset="media/tournament/morocco-ball-flag.png" type="image/webp">
+            <img src="media/tournament/morocco-ball-flag.png" alt="Morocco Flag">
+            </picture>
+            <div class="team__name">
+              <span class="complete">Morocco</span>
+              <span class="shortName">MOR</span>
+            </div>
+            </div>
+            <span>0</span>
+          </div>
+          <div>
+            <div class="bracket__countryName">
+            <picture>
+            <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+            <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+            </picture>
+            <div class="team__name">
+              <span class="complete">France*</span>
+              <span class="shortName">FRA</span>
+            </div>
+            </div>
+            <span>2</span>
+          </div>
+        </div> 
+      </div>
+      <!-- Lineas conectoras de brackets semifinal - Imagen para Desktop -->
+      <div class="bracket__connectordesktop"> 
+        <picture>
+          <source srcset="media/tournament/lines_bracket_desktop.svg" type="image/webp">
+          <img src="media/tournament/lines_bracket_desktop.svg" alt="Morocco Flag">
+        </picture>
+      </div>
+      <!-- Lineas conectoras de brackets semifinal - Imagen para Desktop -->
+      <div class="bracket__connectormobile">
+        <picture>
+          <source srcset="media/tournament/lines_bracket_mobile.svg" type="image/webp">
+          <img src="media/tournament/lines_bracket_mobile.svg" alt="Morocco Flag">
+        </picture>
+      </div>
+      <!-- Seccion partido final, contenido y resultado. (modal pop up) -->
+      <div class="bracket__final">
+        <div class="bracket__match final__match">
+          <h4>Lusail Final - DEC 18, 2022</h4>
+          <div>
+            <div class="bracket__countryName">
+            <picture>
+            <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+            <img src="media/tournament/argentina-ball-flag.png" alt="Argentina flag">
+            </picture>
+            <div class="team__name">
+              <span class="complete">Argentina* </span>
+              <span class="shortName">ARG*</span>
+            </div>
+            </div>
+          <span>3 (4)</span>
+        </div>
+          <div>
+            <div class="bracket__countryName">
+            <picture>
+            <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+            <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">France</span>
+            <span class="shortName">FRA</span>
+          </div>
+        </div>
+          <span>3 (2)</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Seccion estadisticas de goles y más. -->
+  <div class="goals__section">
+    <!-- contenedor de las Tiles e imagenes que conforman esta seccion -->
+    <div class="goals__wrapper">
+  
+      <!-- Componente Ball Image - Balon oficial -->
+      <div class="goals__ball animated">
+        <picture>
+          <source srcset="media/tournament/ball22_al-rihla.png" type="image/webp">
+          <img src="media/tournament/ball22_al-rihla.png" alt="Qatar official ball">
+        </picture>
+      </div>
+  
+      <!-- Tile 1: nombre del balon oficial -->
+      <div class="goals__tile animated">
+        <span class="goals__tile__label">Official Match Ball</span>
+        <span class="goals__tile__value yellow">Al-Rihla</span>
+      </div>
+  
+      <!-- Tile 2: Total goles marcados en todo el torneo -->
+      <div class="goals__tile animated">
+        <span class="goals__tile__label">Goals Scored</span>
+        <span class="goals__tile__value yellow">137</span>
+      </div>
+  
+      <!-- Tile 3: Informacion goleador del torneo y hover -->
+      <div class="goals__tile goals__tile--scorer animated">
+        <!-- informacion de goleadores -->
+        <div class="scorer__default">
+          <span class="goals__tile__label">Top Scorer</span>
+          <span class="goals__tile__value">Mbappe (7)</span>
+        </div>
+        <!-- clase usada para dirigirse al contenido que se muestra con hover -->
+        <div class="scorer__hover">
+          <span class="scorer__name">Mbappe (7)</span>
+          <picture>
+            <source srcset="media/goleador_mbappe.png" type="image/png">
+            <img src="media/goleador_mbappe.png" alt="mbappe celebrating">
+          </picture>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+<!-- Aquí termina la seccion de datos del primero torneo - 
+ ============ 2022 ========== -->
+
+<!-- Aquí EMPIEZA la seccion del Mundial Russia - 
+ ============ 2018 ========== -->
+
+<section id="worldcup-2018" class="timeline__event"> <!-- Nombre del Mundial -->
+  <h2 class="event__title">
+    Russia 2018
+    <button class="back-to-top" title="Back to Top">
+      <picture>
+        <source srcset="media/chevrons-up-backtotop.svg" type="image/svg">
+        <img src="media/chevrons-up-backtotop.svg" alt="Back to top button">
+      </picture>
+    </button>
+  </h2>
+  <div class="event__banner banner">
+    <picture>
+      <img src="media/rusia-dieciocho-banner.png" alt="World Cup 2018" class="banner__image animate">
+    </picture>
+    
+    <picture>
+      <img src="media/players-rusia-18.png" alt="World Cup 2018" class="banner__image animate__players">
+    </picture>
+  </div>
+  <div class="event__details">
+    <span>Francia toca la gloria otra vez ante la Croacia de Modric.</span>
+  </div>
+<!-- Aquí empieza la seccion masonry y estadisticas del torneo -->
+<!-- Seccion de Tiles/cards -->
+<section class="tile__container">
+<div class="tile tile__small tile__logo">
+  <picture>
+    <source srcset="media/tournament/RussiaDieciocho-logo.png" type="image/png">
+    <source srcset="media/tournament/RussiaDieciocho-logo.png" type="image/png">
+    <img src="media/tournament/RussiaDieciocho-logo.png" alt="RussiaTwentyEighteen">
+  </picture>
+</div>
+
+<!-- Tile con descripcion resumen de la copa -->
+<div class="tile tile__wide">
+  <p>Russia 2018 introduced the VAR system and was praised for its organization and hospitality. France's young squad, led by Mbappé and Griezmann, dominated the tournament. Croatia reached its first-ever final, showcasing remarkable resilience. It also recorded the most own goals in tournament history (12).</p>
+</div>
+
+<!-- Tile con resultado de la Final -->
+<div class="tile tile__small tile__match-result">
+  <h3 class="tile__match-result__title">FINAL MATCH RESULT</h3>
+  <div class="tile__match-result__score">
+    <picture>
+      <source srcset="media/tournament/france-ball-flag.png" type="image/webp">
+      <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+      <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+    </picture>
+    <span>4 - 2</span>
+    <picture>
+      <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+      <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+      <img src="media/tournament/argentina-ball-flag.png" alt="Argentina Flag">
+    </picture>
+  </div>
+  <div class="tile__match-result__penalty">Full Time</div>
+</div>
+
+<!-- Tile Con total de asistentes al mundial -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">ATTENDANCE</div>
+  <div class="tile__content__value">3,031,768</div>
+</div>
+
+<!-- Tile con el Mejor jugador del torneo -->
+<div class="tile tile__tall tile__mvp">
+  <div class="tile__mvp__text">
+    <h3 class="tile__mvp__title">Best Player of the Tournament</h3>
+    <p class="tile__mvp__name">Luka Modrić</p>
+  </div>
+  <picture class="tile__mvp__image">
+    <source srcset="media/mvp_modric_russia.png" type="image/webp">
+    <source srcset="media/mvp_modric_russia.png" type="image/png">
+    <img src="media/mvp_modric_russia.png" alt="Luka Modric">
+  </picture>
+</div>
+
+<!-- Tile Cantidad de estadios habilitados -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">NUMBER OF STADIUMS</div>
+  <div class="tile__content__value">12</div>
+</div>
+
+<!-- Tile con ranking de posiciones y PopUp de detalles -->
+<div class="tile tile__large tile__ranking">
+  <div class="tile__ranking__header">
+    <h3 class="tile__ranking__title">RANKING:</h3>
+    <a href="#" class="tile__ranking__link" data-modal-target="#modal-2-18">View more ></a>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+      <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+      <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>1. France</strong>
+      <span>Champìon</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/croatia-ball-flag.png" type="image/webp">
+      <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+      <img src="media/tournament/croatia-ball-flag.png" alt="France Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>2. Croatia</strong>
+      <span>Runner-up</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Belgium-BEL.png" type="image/png">
+      <source srcset="media/tournament/Belgium-BEL.png" type="image/png">
+      <img src="media/tournament/Belgium-BEL.png" alt="Belgium Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>3. Belgium</strong>
+      <span>Third Place</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/England-ENG.png" type="image/png">
+      <img src="media/tournament/England-ENG.png" alt="England Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>4. England</strong>
+      <span>Fourth Place</span>
+    </div>
+  </div>
+</div>
+
+<!-- Tile con Lider de asistencias -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">LEADER IN ASSISTS</div>
+  <div class="tile__content__value">De Bruyne (3)</div>
+</div>
+</section>
+
+<!-- Modal PopUp - Resultados 2022 -->
+<div class="modal" id="modal-2-18">
+<div class="modal__overlay"></div>
+<div class="modal__content">
+  <div class="modal__header">
+    <h2>Final Results</h2>
+    <button class="modal__close" data-close-button>&times;</button>
+  </div>
+  <div class="modal__brackets">
+    <div class="bracket__round bracket__semis">
+      <div class="bracket__match semifinal__first">
+        <h4>Semifinal - JUL 10, 2018</h4>
+        <div> <!-- Modal PopUp Resultados 2022 -->
+          <div class="bracket__countryName"> 
+          <picture>
+          <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+          <img src="media/tournament/france-ball-flag.png" alt="France flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">France*</span>
+            <span class="shortName">FRA</span> <!-- version corta del nombre en elmarcador para mobile -->
+          </div>
+          </div>
+          <span>1</span>
+        </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Belgium-BEL.png" type="image/png">
+          <img src="media/tournament/Belgium-BEL.png" alt="Belgium Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Belgium</span>
+            <span class="shortName">BEL</span>
+          </div>
+          </div>
+          <span>0</span>
+        </div>
+      </div>
+      <div class="bracket__match semifinal__second">
+        <h4>Semifinal - JUL 11, 2018</h4>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+          <img src="media/tournament/croatia-ball-flag.png" alt="Croatia Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Croatia</span>
+            <span class="shortName">CRO</span>
+          </div>
+          </div>
+          <span>2</span>
+        </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/England-ENG.png" type="image/png">
+          <img src="media/tournament/England-ENG.png" alt="England Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">England</span>
+            <span class="shortName">ENG</span>
+          </div>
+          </div>
+          <span>1</span>
+        </div>
+      </div> 
+    </div>
+    <div class="bracket__connectordesktop"> <!-- Lineas de brackets semifinal - Imagen Desktop -->
+      <picture>
+        <source srcset="media/tournament/lines_bracket_desktop.svg" type="image/webp">
+        <img src="media/tournament/lines_bracket_desktop.svg" alt="Morocco Flag">
+      </picture>
+    </div>
+    <div class="bracket__connectormobile"> <!-- Lineas de brackets semifinal - Imagen mobile -->
+      <picture>
+        <source srcset="media/tournament/lines_bracket_mobile.svg" type="image/webp">
+        <img src="media/tournament/lines_bracket_mobile.svg" alt="Morocco Flag">
+      </picture>
+    </div>
+    <div class="bracket__final">
+      <div class="bracket__match final__match">
+        <h4>Luzhniki Final - JUL 15, 2018</h4>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+          <img src="media/tournament/croatia-ball-flag.png" alt="Croatia flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Croatia</span>
+            <span class="shortName">CRO</span>
+          </div>
+          </div>
+        <span>2</span>
+      </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/france-ball-flag.png" type="image/png">
+          <img src="media/tournament/france-ball-flag.png" alt="France Flag">
+        </picture>
+        <div class="team__name">
+          <span class="complete">France*</span>
+          <span class="shortName">FRA*</span>
+        </div>
+      </div>
+        <span>4</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="goals__section">
+  <div class="goals__wrapper">
+
+    <!-- Componente Ball Image - Balon oficial -->
+    <div class="goals__ball animated">
+      <picture>
+        <source srcset="media/tournament/ball_Telstar_eighteen.png" type="image/webp">
+        <img src="media/tournament/ball_Telstar_eighteen.png" alt="RussiaOfficial ball">
+      </picture>
+    </div>
+
+    <!-- Tile 1: nombre del balon oficial -->
+    <div class="goals__tile animated">
+      <span class="goals__tile__label">Official Match Ball</span>
+      <span class="goals__tile__value yellow">Telstar 18</span>
+    </div>
+
+    <!-- Tile 2: Total goles marcados en todo el torneo -->
+    <div class="goals__tile animated">
+      <span class="goals__tile__label">Goals Scored</span>
+      <span class="goals__tile__value yellow">169</span>
+    </div>
+
+    <!-- Tile 3: Informacion goleador del torneo y hover -->
+    <div class="goals__tile goals__tile--scorer animated">
+      <div class="scorer__default">
+        <span class="goals__tile__label">Top Scorer</span>
+        <span class="goals__tile__value">H. Kane (6)</span>
+      </div>
+      <!-- clase usada para dirigirse al contenido que se muestra con hover -->
+      <div class="scorer__hover">
+        <span class="scorer__name">Kane (6)</span>
+        <picture>
+          <source srcset="media/scorer_kane.png" type="image/webp">
+          <img src="media/scorer_kane.png" alt="mbappe celebrating">
+        </picture>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<!-- Aquí EMPIEZA la seccion del Mundial Brasil 
+ ============ 2014 ========== -->
+
+ <section id="worldcup-2014" class="timeline__event"> <!-- Nombre del Mundial -->
+  <h2 class="event__title">
+    Brazil 2014
+    <button class="back-to-top" title="Back to Top">
+      <picture>
+        <source srcset="media/chevrons-up-backtotop.svg" type="image/svg">
+        <img src="media/chevrons-up-backtotop.svg" alt="Back to top button">
+      </picture>
+    </button>
+  </h2>
+  <div class="event__banner banner">
+    <picture>
+      <img src="media/brazil-stadium-banner.png" alt="World Cup 2014" class="banner__image animate">
+    </picture>
+    
+    <picture>
+      <img src="media/players-brazil-fourteen.png" alt="World Cup 2014" class="banner__image animate__players">
+    </picture>
+  </div>
+  <div class="event__details">
+    <span>Germany wins for the Fourth Time, historic goal record by Klose and unforgettable performances.</span>
+  </div>
+<!-- Aquí empieza la seccion masonry y estadisticas del torneo -->
+<!-- Seccion de Tiles/cards -->
+<section class="tile__container">
+<div class="tile tile__small tile__logo">
+  <picture>
+    <source srcset="media/tournament/BrazilTwentyFourteen-logo.png" type="image/png">
+    <source srcset="media/tournament/BrazilTwentyFourteen-logo.png" type="image/png">
+    <img src="media/tournament/BrazilTwentyFourteen-logo.png" alt="Brazil-Fourteen">
+  </picture>
+</div>
+
+<!-- Tile con descripcion resumen de la copa -->
+<div class="tile tile__wide">
+  <p>Brazil 2014 offered electrifying matches and stunning upsets, most notably Germany’s 7-1 demolition of Brazil in the semi-finals. Germany became the first European nation to win a World Cup on South American soil. It was also the first tournament using goal-line technology to confirm goals.</p>
+</div>
+
+<!-- Tile con resultado de la Final -->
+<div class="tile tile__small tile__match-result">
+  <h3 class="tile__match-result__title">FINAL MATCH RESULT</h3>
+  <div class="tile__match-result__score">
+    <picture>
+      <source srcset="media/tournament/Germany-GER.png" type="image/webp">
+      <source srcset="media/tournament/Germany-GER.png" type="image/png">
+      <img src="media/tournament/Germany-GER.png" alt="France Flag">
+    </picture>
+    <span>1 - 0</span>
+    <picture>
+      <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+      <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+      <img src="media/tournament/argentina-ball-flag.png" alt="Argentina Flag">
+    </picture>
+  </div>
+  <div class="tile__match-result__penalty">Aggregated</div>
+</div>
+
+<!-- Tile Con total de asistentes al mundial -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">ATTENDANCE</div>
+  <div class="tile__content__value">3,429,873</div>
+</div>
+
+<!-- Tile con el Mejor jugador del torneo -->
+<div class="tile tile__tall tile__mvp">
+  <div class="tile__mvp__text">
+    <h3 class="tile__mvp__title">Best Player of the Tournament</h3>
+    <p class="tile__mvp__name">Lionel Messi</p>
+  </div>
+  <picture class="tile__mvp__image">
+    <source srcset="media/mvp_messi_brasil.png" type="image/png">
+    <source srcset="media/mvp_messi_brasil.png" type="image/png">
+    <img src="media/mvp_messi_brasil.png" alt="Luka Modric">
+  </picture>
+</div>
+
+<!-- Tile Cantidad de estadios habilitados -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">NUMBER OF STADIUMS</div>
+  <div class="tile__content__value">12</div>
+</div>
+
+<!-- Tile con ranking de posiciones y PopUp de detalles -->
+<div class="tile tile__large tile__ranking">
+  <div class="tile__ranking__header">
+    <h3 class="tile__ranking__title">RANKING:</h3>
+    <a href="#" class="tile__ranking__link" data-modal-target="#modal-3-14">View more ></a>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Germany-GER.png" type="image/png">
+      <source srcset="media/tournament/Germany-GER.png" type="image/png">
+      <img src="media/tournament/Germany-GER.png" alt="France Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>1. Germany</strong>
+      <span>Champìon</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+      <img src="media/tournament/argentina-ball-flag.png" alt="France Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>2. Argentina</strong>
+      <span>Runner-up</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Nedelands-NED.png" type="image/png">
+      <img src="media/tournament/Nedelands-NED.png" alt="Netherlands Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>3. Nederlands</strong>
+      <span>Third Place</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Brazil-BRA.png" type="image/png">
+      <img src="media/tournament/Brazil-BRA.png" alt="England Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>4. Brazil</strong>
+      <span>Fourth Place</span>
+    </div>
+  </div>
+</div>
+
+<!-- Tile con Lider de asistencias -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">LEADER IN ASSISTS</div>
+  <div class="tile__content__value">Cuadrado (3)</div>
+</div>
+</section>
+
+<!-- Modal PopUp - Resultados 2014 -->
+<div class="modal" id="modal-3-14">
+<div class="modal__overlay"></div>
+<div class="modal__content">
+  <div class="modal__header">
+    <h2>Final Results</h2>
+    <button class="modal__close" data-close-button>&times;</button>
+  </div>
+  <div class="modal__brackets">
+    <div class="bracket__round bracket__semis">
+      <div class="bracket__match semifinal__first">
+        <h4>Semifinal - JUL 8, 2014</h4>
+        <div> <!-- Modal PopUp Resultados 2022 -->
+          <div class="bracket__countryName"> 
+          <picture>
+          <source srcset="media/tournament/Brazil-BRA.png" type="image/png">
+          <img src="media/tournament/Brazil-BRA.png" alt="Brazil flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Brazil</span>
+            <span class="shortName">BRA</span> <!-- version corta del nombre en elmarcador para mobile -->
+          </div>
+          </div>
+          <span>1</span>
+        </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Germany-GER.png" type="image/png">
+          <img src="media/tournament/Germany-GER.png" alt="Germany Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Germany*</span>
+            <span class="shortName">GER*</span>
+          </div>
+          </div>
+          <span>7</span>
+        </div>
+      </div>
+      <div class="bracket__match semifinal__second">
+        <h4>Semifinal - JUL 9, 2014</h4>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/croatia-ball-flag.png" type="image/png">
+          <img src="media/tournament/croatia-ball-flag.png" alt="Croatia Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Netherland</span>
+            <span class="shortName">NED</span>
+          </div>
+          </div>
+          <span>0 (2)</span>
+        </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+          <img src="media/tournament/argentina-ball-flag.png" alt="England Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Argentina*</span>
+            <span class="shortName">ARG*</span>
+          </div>
+          </div>
+          <span>0 (4)</span>
+        </div>
+      </div> 
+    </div>
+    <div class="bracket__connectordesktop"> <!-- Lineas de brackets semifinal - Imagen Desktop -->
+      <picture>
+        <source srcset="media/tournament/lines_bracket_desktop.svg" type="image/webp">
+        <img src="media/tournament/lines_bracket_desktop.svg" alt="Morocco Flag">
+      </picture>
+    </div>
+    <div class="bracket__connectormobile"> <!-- Lineas de brackets semifinal - Imagen mobile -->
+      <picture>
+        <source srcset="media/tournament/lines_bracket_mobile.svg" type="image/webp">
+        <img src="media/tournament/lines_bracket_mobile.svg" alt="Morocco Flag">
+      </picture>
+    </div>
+    <div class="bracket__final">
+      <div class="bracket__match final__match">
+        <h4>Maracaná Final - JUL 13, 2014</h4>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Germany-GER.png" type="image/png">
+          <img src="media/tournament/Germany-GER.png" alt="Germany flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Germany*</span>
+            <span class="shortName">GER*</span>
+          </div>
+          </div>
+        <span>1</span>
+      </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/argentina-ball-flag.png" type="image/png">
+          <img src="media/tournament/argentina-ball-flag.png" alt="Argentina Flag">
+        </picture>
+        <div class="team__name">
+          <span class="complete">Argentina</span>
+          <span class="shortName">ARG</span>
+        </div>
+      </div>
+        <span>0</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="goals__section">
+  <div class="goals__wrapper">
+
+    <!-- Componente Ball Image - Balon oficial -->
+    <div class="goals__ball animated">
+      <picture>
+        <source srcset="media/Brazuca-fourteen.png" type="image/png">
+        <img src="media/Brazuca-fourteen.png" alt="RussiaOfficial ball">
+      </picture>
+    </div>
+
+    <!-- Tile 1: nombre del balon oficial -->
+    <div class="goals__tile animated">
+      <span class="goals__tile__label">Official Match Ball</span>
+      <span class="goals__tile__value yellow">Brazuca</span>
+    </div>
+
+    <!-- Tile 2: Total goles marcados en todo el torneo -->
+    <div class="goals__tile animated">
+      <span class="goals__tile__label">Goals Scored</span>
+      <span class="goals__tile__value yellow">171</span>
+    </div>
+
+    <!-- Tile 3: Informacion goleador del torneo y hover -->
+    <div class="goals__tile goals__tile--scorer animated">
+      <div class="scorer__default">
+        <span class="goals__tile__label">Top Scorer</span>
+        <span class="goals__tile__value">James Rodriguez (6)</span>
+      </div>
+      <!-- clase usada para dirigirse al contenido que se muestra con hover -->
+      <div class="scorer__hover">
+        <span class="scorer__name">James (6)</span>
+        <picture>
+          <source srcset="media/scorer_James.png" type="image/webp">
+          <img src="media/scorer_James.png" alt="mbappe celebrating">
+        </picture>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section id="worldcup-2010" class="timeline__event"> <!-- Nombre del Mundial -->
+  <h2 class="event__title">
+    South Africa 2010
+    <button class="back-to-top" title="Back to Top">
+      <picture>
+        <source srcset="media/chevrons-up-backtotop.svg" type="image/svg">
+        <img src="media/chevrons-up-backtotop.svg" alt="Back to top button">
+      </picture>
+    </button>
+  </h2>
+  <div class="event__banner banner">
+    <picture>
+      <img src="media/southafrica-stadium-banner.png" alt="World Cup 2022" class="banner__image animate">
+    </picture>
+    
+    <picture>
+      <img src="media/players-southafrica-twten.png" alt="World Cup 2022" class="banner__image animate__players">
+    </picture>
+  </div>
+  <div class="event__details">
+    <span>Amazing goals and memorable team-work exhibitions that leads to the first Spain World Title.</span>
+  </div>
+<!-- Aquí empieza la seccion masonry y estadisticas del torneo -->
+<!-- Seccion de Tiles/cards -->
+<section class="tile__container">
+<div class="tile tile__small tile__logo">
+  <picture>
+    <source srcset="media/tournament/SouthAfricaTwentyTen-logo.png" type="image/png">
+    <source srcset="media/tournament/SouthAfricaTwentyTen-logo.png" type="image/png">
+    <img src="media/tournament/SouthAfricaTwentyTen-logo.png" alt="qatar22logo">
+  </picture>
+</div>
+
+<!-- Tile con descripcion resumen de la copa -->
+<div class="tile tile__wide">
+  <p>the first World Cup on African soil, was famous for its colorful celebrations and the omnipresent sound of vuvuzelas. Spain clinched its first World Cup title through its tiki-taka style. It was also the first time the same team won both the European Championship and the World Cup consecutively.</p>
+</div>
+
+<!-- Tile con resultado de la Final -->
+<div class="tile tile__small tile__match-result">
+  <h3 class="tile__match-result__title">FINAL MATCH RESULT</h3>
+  <div class="tile__match-result__score">
+    <picture>
+      <source srcset="media/tournament/Spain-ESP.png" type="image/webp">
+      <source srcset="media/tournament/Spain-ESP.png" type="image/png">
+      <img src="media/tournament/Spain-ESP.png" alt="France Flag">
+    </picture>
+    <span>1 - 0</span>
+    <picture>
+      <source srcset="media/tournament/Nedelands-NED.png" type="image/webp">
+      <source srcset="media/tournament/Nedelands-NED.png" type="image/png">
+      <img src="media/tournament/argentina-ball-flag.png" alt="Argentina Flag">
+    </picture>
+  </div>
+  <div class="tile__match-result__penalty">Aggregated ET</div>
+</div>
+
+<!-- Tile Con total de asistentes al mundial -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">ATTENDANCE</div>
+  <div class="tile__content__value">3,178,856 M</div>
+</div>
+
+<!-- Tile con el Mejor jugador del torneo -->
+<div class="tile tile__tall tile__mvp">
+  <div class="tile__mvp__text">
+    <h3 class="tile__mvp__title">Best Player of the Tournament</h3>
+    <p class="tile__mvp__name">Diego Forlán</p>
+  </div>
+  <picture class="tile__mvp__image">
+    <source srcset="media/mvp_messi-qatar-bg.png" type="image/webp">
+    <source srcset="media/mvp_messi-qatar-bg.png" type="image/png">
+    <img src="media/mvp_messi-qatar-bg.png" alt="Lionel Messi">
+  </picture>
+</div>
+
+<!-- Tile Cantidad de estadios habilitados -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">NUMBER OF STADIUMS</div>
+  <div class="tile__content__value">10</div>
+</div>
+
+<!-- Tile con ranking de posiciones y PopUp de detalles -->
+<div class="tile tile__large tile__ranking">
+  <div class="tile__ranking__header">
+    <h3 class="tile__ranking__title">RANKING:</h3>
+    <a href="#" class="tile__ranking__link" data-modal-target="#modal-4-10">View more ></a>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Spain-ESP.png" type="image/png">
+      <source srcset="media/tournament/Spain-ESP.png" type="image/png">
+      <img src="media/tournament/Spain-ESP.png" alt="Spain Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>1. Spain</strong>
+      <span>Champions</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Nedelands-NED.png" type="image/png">
+      <source srcset="media/tournament/Nedelands-NED.png" type="image/png">
+      <img src="media/tournament/Nedelands-NED.png" alt="Netherlands Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>2. Netherlands</strong>
+      <span>Runner-up</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Germany-GER.png" type="image/png">
+      <source srcset="media/tournament/Germany-GER.png" type="image/png">
+      <img src="media/tournament/Germany-GER" alt="Germany Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>3. Germany</strong>
+      <span>Third Place</span>
+    </div>
+  </div>
+
+  <div class="tile__ranking__item">
+    <picture>
+      <source srcset="media/tournament/Uruguay-URU.png" type="image/png">
+      <img src="media/tournament/Uruguay-URU.png" alt="Uruguay Flag">
+    </picture>
+    <div class="tile__ranking__info">
+      <strong>4. Uruguay</strong>
+      <span>Fourth Place</span>
+    </div>
+  </div>
+</div>
+
+<!-- Tile con Lider de asistencias -->
+<div class="tile tile__small tile__content">
+  <div class="tile__content__title">LEADER IN ASSISTS</div>
+  <div class="tile__content__value">Thomas Muller (3)</div>
+</div>
+</section>
+
+<!-- Modal PopUp - Resultados 2022 -->
+<div class="modal" id="modal-4-10">
+<div class="modal__overlay"></div>
+<div class="modal__content">
+  <div class="modal__header">
+    <h2>Final Results</h2>
+    <button class="modal__close" data-close-button>&times;</button>
+  </div>
+  <div class="modal__brackets">
+    <div class="bracket__round bracket__semis">
+      <div class="bracket__match semifinal__first">
+        <h4>Semifinal - JUL 6, 2010</h4>
+        <div> <!-- Modal PopUp Resultados 2022 -->
+          <div class="bracket__countryName"> 
+          <picture>
+          <source srcset="media/tournament/Nedelands-NED.png" type="image/png">
+          <img src="media/tournament/Nedelands-NED.png" alt="Nederland flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Netherland</span>
+            <span class="shortName">NED</span> <!-- version corta del nombre en elmarcador para mobile -->
+          </div>
+          </div>
+          <span>3</span>
+        </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Uruguay-URU.png" type="image/png">
+          <img src="media/tournament/Uruguay-URU.png" alt="Uruguay Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Uruguay</span>
+            <span class="shortName">URU</span>
+          </div>
+          </div>
+          <span>2</span>
+        </div>
+      </div>
+      <div class="bracket__match semifinal__second">
+        <h4>Semifinal - JUL 7, 2010</h4>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Spain-ESP.png" type="image/png">
+          <img src="media/tournament/Spain-ESP.png" alt="Spain Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Spain</span>
+            <span class="shortName">SPA</span>
+          </div>
+          </div>
+          <span>1</span>
+        </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Germany-GER.png" type="image/png">
+          <img src="media/tournament/Germany-GER.png" alt="Germany Flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Germany</span>
+            <span class="shortName">GER</span>
+          </div>
+          </div>
+          <span>0</span>
+        </div>
+      </div> 
+    </div>
+    <div class="bracket__connectordesktop"> <!-- Lineas de brackets semifinal - Imagen Desktop -->
+      <picture>
+        <source srcset="media/tournament/lines_bracket_desktop.svg" type="image/webp">
+        <img src="media/tournament/lines_bracket_desktop.svg" alt="Morocco Flag">
+      </picture>
+    </div>
+    <div class="bracket__connectormobile"> <!-- Lineas de brackets semifinal - Imagen mobile -->
+      <picture>
+        <source srcset="media/tournament/lines_bracket_mobile.svg" type="image/webp">
+        <img src="media/tournament/lines_bracket_mobile.svg" alt="Morocco Flag">
+      </picture>
+    </div>
+    <div class="bracket__final">
+      <div class="bracket__match final__match">
+        <h4>Jo'burg Final - JUL 11, 2010</h4>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Spain-ESP.png" type="image/png">
+          <img src="media/tournament/Spain-ESP.png" alt="Spain flag">
+          </picture>
+          <div class="team__name">
+            <span class="complete">Spain</span>
+            <span class="shortName">SPA*</span>
+          </div>
+          </div>
+        <span>1</span>
+      </div>
+        <div>
+          <div class="bracket__countryName">
+          <picture>
+          <source srcset="media/tournament/Nedelands-NED.png" type="image/png">
+          <img src="media/tournament/Nedelands-NED.png" alt="Netherlands Flag">
+        </picture>
+        <div class="team__name">
+          <span class="complete">Netherland</span>
+          <span class="shortName">NED</span>
+        </div>
+      </div>
+        <span>0</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="goals__section">
+  <div class="goals__wrapper">
+
+    <!-- Componente Ball Image - Balon oficial -->
+    <div class="goals__ball animated">
+      <picture>
+        <source srcset="media/Jabulani-Ten.png" type="image/png">
+        <img src="media/Jabulani-Ten.png" alt="South Africa official ball">
+      </picture>
+    </div>
+
+    <!-- Tile 1: nombre del balon oficial -->
+    <div class="goals__tile animated">
+      <span class="goals__tile__label">Official Match Ball</span>
+      <span class="goals__tile__value yellow">Jabulani</span>
+    </div>
+
+    <!-- Tile 2: Total goles marcados en todo el torneo -->
+    <div class="goals__tile animated">
+      <span class="goals__tile__label">Goals Scored</span>
+      <span class="goals__tile__value yellow">145</span>
+    </div>
+
+    <!-- Tile 3: Informacion goleador del torneo y hover -->
+    <div class="goals__tile goals__tile--scorer animated">
+      <div class="scorer__default">
+        <span class="goals__tile__label">Top Scorer</span>
+        <span class="goals__tile__value">Muller, Villa, Forlán (5)</span>
+      </div>
+      <!-- clase usada para dirigirse al contenido que se muestra con hover -->
+      <div class="scorer__hover">
+        <span class="scorer__name">Muller (5)</span>
+        <picture>
+          <source srcset="media/scorer_muller.png" type="image/webp">
+          <img src="media/scorer_muller.png" alt="mbappe celebrating">
+        </picture>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+<!-- 
+FIN DEL CONTENIDO INFORMATIVO
+Aquí se pueden añadir mas 
+secciones de Mundiales
+-->
+</div>  
+
+
+
+  <!-- Seccion Pie de pagina: Empieza el footer -->
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__logo">
+      <picture>
+        <source srcset="media/wch_logo_white_footer.svg" type="image/svg">
+        <img src="media/wch_logo_white_footer.svg" alt="world cup history logo">
+      </picture>
+    </div>
+    <div class="footer__text">
+      <p>Copyright All rights reserved. © 2025 by AndresSJ</p>
+    </div>
+    <div class="footer__presentation">
+      <p>Presented to <a href="https://cei.es" target="_blank">CEI.es</a></p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+
+</html>
